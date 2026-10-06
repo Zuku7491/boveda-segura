@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Bóveda S3guR4$_</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos/styles.css">
+</head>
+<body>
+<main>
+<h1>La Bóveda <em>S3guR4$_</em></h1>
+<p class="lead">Cinco cerraduras, una por cada regla del manual para crear una contraseña. Genera una o escribe la tuya y mira cuáles se abren. Nada sale de tu navegador.</p>
+
+<section class="hero">
+  <div class="vault" id="vault" role="img" aria-label="Bóveda con cinco cerraduras">
+    <svg viewBox="0 0 300 300" id="svg">
+      <g id="segs"></g>
+      <g class="dial" id="dial">
+        <circle cx="150" cy="150" r="100" fill="var(--panel)" stroke="var(--line)" stroke-width="2"/>
+        <circle cx="150" cy="150" r="92" fill="none" stroke="var(--mut)" stroke-width="10" stroke-dasharray="2 8.1" opacity=".5"/>
+        <path d="M150 52l9 16h-18z" fill="var(--gold2)"/>
+      </g>
+    </svg>
+    <div class="core"><b id="pct">0/8</b><span id="verd">Cerrada</span></div>
+  </div>
+
+  <div class="panel">
+    <label for="pw">Tu contraseña de prueba</label>
+    <div class="row"><input id="pw" type="password" autocomplete="off" spellcheck="false" placeholder="Escribe o genera una"><button class="ghost" id="eye" aria-label="Mostrar u ocultar">Ver</button></div>
+    <div class="tools">
+      <button class="gold" id="gen">Generar contraseña</button>
+      <button class="ghost" id="copy">Copiar</button>
+      <button class="ghost" id="clr">Limpiar todo</button>
+    </div>
+    <label for="pers">Tus palabras, separadas por comas</label>
+    <input id="pers" type="text" placeholder="luna, perro, mar" autocomplete="off">
+    <div class="msg" id="msg">Escribe algo para empezar.</div>
+    <p class="time" id="time"></p>
+    <div style="color:var(--mut);font-size:13px">Tiempo estimado de fuerza bruta</div>
+  </div>
+</section>
+
+<h2>Las cinco cerraduras</h2>
+<div class="locks" id="locks"></div>
+
+<h2>Hábitos que completan la bóveda</h2>
+<div class="tbl" style="font-size:15px;line-height:1.7">Usa una contraseña distinta para cada cuenta. Guárdalas en un gestor como LastPass, 1Password o Dashlane. Activa la autenticación de dos factores en todas las cuentas que la permitan.</div>
+<h2>¿Cuánto aguanta cada longitud?</h2>
+<p style="color:var(--mut);margin:0">Tabla del manual: ataque de fuerza bruta usando todos los caracteres. Tu longitud actual se resalta.</p>
+<div class="tbl" id="tbl"></div>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
